@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="siteTitle">TradePro - Professional Trading Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Добавляем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span data-translate="loading">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Переключатель языков -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ua">UA</button>
+    </div>
+
+    <!-- Навигационное меню -->
+    <div class="transparent-window">
+        <nav class="nav-menu">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>TradePro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" data-translate="home"><i class="fas fa-home"></i> Главная</a>
+                <a href="#" class="nav-link" data-translate="terms"><i class="fas fa-file-contract"></i> Условия использования</a>
+                <a href="#" class="nav-link" data-translate="about"><i class="fas fa-info-circle"></i> О нас</a>
+                <a href="#" class="nav-link" data-translate="partner"><i class="fas fa-handshake"></i> Партнерская программа</a>
+                <a href="#" class="nav-link" data-translate="faq"><i class="fas fa-question-circle"></i> FAQ</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Добавить кнопку бургер-меню -->
+    <div class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 data-translate="heroTitle">Профессиональная торговая платформа</h1>
+            <p data-translate="heroSubtitle">Инновационные решения для современного трейдинга</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>100K+</span>
+                    <p data-translate="activeTraders">Активных трейдеров</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-globe"></i>
+                    <span>50+</span>
+                    <p data-translate="countries">Стран</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>$1B+</span>
+                    <p data-translate="tradingVolume">Торговый объем</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <h2 data-translate="choosePlanTitle">Выберите свой план</h2>
+            <p data-translate="choosePlanSubtitle">Выберите лучший вариант для ваших торговых целей</p>
+            <div class="plan-toggle">
+                <button class="toggle-btn active" data-step="instant" data-translate="instant">Мгновенный</button>
+                <button class="toggle-btn" data-step="1step" data-translate="step1">1 Шаг</button>
+                <button class="toggle-btn" data-step="2step" data-translate="step2">2 Шага</button>
+            </div>
+            <div class="price-toggle">
+                <button class="amount-btn" data-amount="5">$5K</button>
+                <button class="amount-btn active" data-amount="10">$10K</button>
+                <button class="amount-btn" data-amount="25">$25K</button>
+                <button class="amount-btn" data-amount="50">$50K</button>
+            </div>
+        </header>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid">
+            <!-- Student Card -->
+            <div class="card student">
+                <div class="card-badge" data-translate="starter">Начальный</div>
+                <h2 data-translate="studentPlan">Student Plan</h2>
+                <div class="price" data-translate="fromPrice">от $5K</div>
+                <ul>
+                    <li data-translate="basicFeatures"><strong>Basic features</strong></li>
+                    <li data-translate="limitedTrading">Limited trading volume</li>
+                    <li data-translate="standardSupport">Standard support</li>
+                    <li data-translate="basicAnalytics">Basic analytics</li>
+                </ul>
+                <button class="card-btn" data-translate="choosePlan">Выбрать план</button>
+            </div>
+
+            <!-- Practitioner Card -->
+            <div class="card practitioner">
+                <div class="card-badge" data-translate="advanced">Продвинутый</div>
+                <h2 data-translate="practitionerPlan">Practitioner Plan</h2>
+                <div class="price" data-translate="fromPrice10k">от $10K</div>
+                <ul>
+                    <li data-translate="advancedFeatures"><strong>Advanced features</strong></li>
+                    <li data-translate="increasedTrading">Increased trading volume</li>
+                    <li data-translate="prioritySupport">Priority support</li>
+                    <li data-translate="advancedAnalytics">Advanced analytics</li>
+                </ul>
+                <button class="card-btn" data-translate="choosePlan">Выбрать план</button>
+            </div>
+
+            <!-- Master Card -->
+            <div class="card master">
+                <div class="card-badge" data-translate="premium">Премиум</div>
+                <h2 data-translate="masterPlan">Master Plan</h2>
+                <div class="price" data-translate="fromPrice25k">от $25K</div>
+                <ul>
+                    <li data-translate="premiumFeatures"><strong>Premium features</strong></li>
+                    <li data-translate="unlimitedTrading">Unlimited trading volume</li>
+                    <li data-translate="vipSupport">24/7 VIP support</li>
+                    <li data-translate="proAnalytics">Professional analytics</li>
+                </ul>
+                <button class="card-btn" data-translate="choosePlan">Выбрать план</button>
+            </div>
+        </div>
+
+        <!-- График сразу после pricing-grid -->
+        <div class="chart-section">
+            <h2 data-translate="tradingStats">Торговая статистика</h2>
+            <div class="chart-container">
+                <canvas id="tradingChart"></canvas>
+            </div>
+            <div class="chart-controls">
+                <button class="chart-btn active" data-period="day" data-translate="daily">День</button>
+                <button class="chart-btn" data-period="week" data-translate="weekly">Неделя</button>
+                <button class="chart-btn" data-period="month" data-translate="monthly">Месяц</button>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2 data-translate="whyChooseUs">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-translate="security">Безопасность</h3>
+                    <p data-translate="securityDesc">Современные технологии защиты данных и средств</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3 data-translate="speed">Скорость</h3>
+                    <p data-translate="speedDesc">Мгновенное исполнение ордеров</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h3 data-translate="support">Поддержка</h3>
+                    <p data-translate="supportDesc">Круглосуточная профессиональная поддержка</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3 data-translate="analytics">Аналитика</h3>
+                    <p data-translate="analyticsDesc">Продвинутые инструменты анализа</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-translate="aboutCompany">О компании</h3>
+                <p data-translate="companyDesc">TradePro - ведущая платформа для профессиональной торговли с передовыми технологиями и инновационными решениями.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="contacts">Контакты</h3>
+                <p><i class="fas fa-envelope"></i> support@tradepro.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="social">Социальные сети</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-translate="copyright">© 2024 TradePro. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
