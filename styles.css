@@ -91,6 +91,82 @@
     }
 }
 
+/* Анимация переливания текста */
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Анимация свечения текста */
+@keyframes textGlow {
+    0% {
+        text-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.3),
+            0 0 20px rgba(100, 255, 218, 0.3),
+            0 0 30px rgba(100, 255, 218, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(100, 255, 218, 0.5),
+            0 0 40px rgba(100, 255, 218, 0.5),
+            0 0 60px rgba(100, 255, 218, 0.5);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.3),
+            0 0 20px rgba(100, 255, 218, 0.3),
+            0 0 30px rgba(100, 255, 218, 0.3);
+    }
+}
+
+/* Обновленные стили для заголовка */
+h1.hero-title {
+    background: linear-gradient(
+        120deg,
+        #64ffda 0%,
+        #ffffff 25%,
+        #64ffda 50%,
+        #ffffff 75%,
+        #64ffda 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: 
+        textShine 4s linear infinite,
+        textGlow 3s ease-in-out infinite;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.3));
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Для поддержки разных браузеров */
+@supports not (background-clip: text) {
+    h1.hero-title {
+        color: #64ffda;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    h1.hero-title {
+        font-size: 2rem;
+        background-size: 150% auto;
+        filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.2));
+    }
+}
+
 /* Базовые стили */
 * {
     margin: 0;
@@ -99,13 +175,203 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(-45deg, #1a1a2e, #16213e, #1f4287, #162447);
-    background-size: 400% 400%;
-    color: #ffffff;
-    min-height: 100vh;
-    animation: gradientBG 15s ease infinite;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: white;
+    background: #151912;
+    line-height: 1.6;
     overflow-x: hidden;
+}
+
+canvas#neuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(21, 25, 18, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00ff66;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #00ff66;
+}
+
+button {
+    background: #00ff66;
+    color: #151912;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00cc52;
+}
+
+main {
+    padding: 100px 40px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.feature {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.pricing {
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.pricing h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 60px;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.price-card.popular {
+    position: relative;
+    background: rgba(0, 255, 102, 0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #00ff66;
+    color: #151912;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.price span {
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    margin: 30px 0;
+}
+
+li {
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 60px 20px;
+    }
 }
 
 /* Переключатель языков */
@@ -1131,4 +1397,122 @@ body {
 
 .amount-btn:hover:not(.active) {
     background: rgba(100, 255, 218, 0.2);
+}
+
+/* Убедитесь, что весь контент находится поверх canvas */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Добавить в существующий CSS */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    z-index: 9999; /* Увеличиваем z-index */
+}
+
+.lang-modal {
+    position: absolute;
+    display: none; /* Изменяем с visibility: hidden на display: none */
+    top: 100%;
+    right: 0;
+    background: rgba(21, 25, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 180px;
+}
+
+.language-selector.active .lang-modal {
+    display: block; /* Изменяем с visibility: visible на display: block */
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.language-selector.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Новые стили для языкового селектора */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.dropbtn {
+    background-color: rgba(0, 255, 102, 0.1);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 255, 102, 0.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(21, 25, 18, 0.95);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    margin-top: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 255, 102, 0.1);
+    border-radius: 8px;
+}
+
+/* Показываем выпадающее меню при наведении */
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.arrow {
+    font-size: 10px;
+}
+
+.language-dropdown:hover .arrow {
+    transform: rotate(180deg);
 }

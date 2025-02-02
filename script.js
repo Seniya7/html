@@ -1,105 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Базовая функциональность переключения языков
+    // Объект с переводами
     const translations = {
-        en: {
-            // Site title
-            siteTitle: "TradePro - Professional Trading Solutions",
-            loading: "Loading...",
-
-            // Navigation
-            home: "Home",
-            terms: "Terms of Use",
-            about: "About Us",
-            partner: "Partnership Program",
-            faq: "FAQ",
-            
-            // Hero section
-            heroTitle: "Professional Trading Platform",
-            heroSubtitle: "Innovative solutions for modern trading",
-            activeTraders: "Active Traders",
-            countries: "Countries",
-            tradingVolume: "Trading Volume",
-            
-            // Plan section
-            choosePlanTitle: "Choose Your Plan",
-            choosePlanSubtitle: "Pick the best option for your trading goals",
-            instant: "Instant",
-            step1: "1 Step",
-            step2: "2 Steps",
-            
-            // Plans
-            starter: "Starter",
-            advanced: "Advanced",
-            premium: "Premium",
-            studentPlan: "Student Plan",
-            practitionerPlan: "Practitioner Plan",
-            masterPlan: "Master Plan",
-            fromPrice: "from $5K",
-            fromPrice10k: "from $10K",
-            fromPrice25k: "from $25K",
-            
-            // Plan features
-            basicFeatures: "Basic features",
-            advancedFeatures: "Advanced features",
-            premiumFeatures: "Premium features",
-            limitedTrading: "Limited trading volume",
-            increasedTrading: "Increased trading volume",
-            unlimitedTrading: "Unlimited trading volume",
-            standardSupport: "Standard support",
-            prioritySupport: "Priority support",
-            vipSupport: "24/7 VIP support",
-            basicAnalytics: "Basic analytics",
-            advancedAnalytics: "Advanced analytics",
-            proAnalytics: "Professional analytics",
-            
-            // Features section
-            whyChooseUs: "Why Choose Us",
-            security: "Security",
-            securityDesc: "Modern data and funds protection technologies",
-            speed: "Speed",
-            speedDesc: "Instant order execution",
-            support: "Support",
-            supportDesc: "24/7 professional support",
-            analytics: "Analytics",
-            analyticsDesc: "Advanced analysis tools",
-            
-            // Footer
-            aboutCompany: "About Company",
-            companyDesc: "TradePro is a leading platform for professional trading with advanced technologies and innovative solutions.",
-            contacts: "Contacts",
-            social: "Social Media",
-            copyright: "© 2024 TradePro. All rights reserved.",
-            
-            // Buttons
-            choosePlan: "Choose Plan"
-        },
         ru: {
-            // Site title
-            siteTitle: "TradePro - Профессиональные торговые решения",
-            loading: "Загрузка...",
-
-            // Navigation
-            home: "Главная",
-            terms: "Условия использования",
-            about: "О нас",
-            partner: "Партнерская программа",
-            faq: "FAQ",
-            
-            // Hero section
-            heroTitle: "Профессиональная торговая платформа",
+            mainTitle: "Профессиональная торговая платформа",
             heroSubtitle: "Инновационные решения для современного трейдинга",
             activeTraders: "Активных трейдеров",
             countries: "Стран",
             tradingVolume: "Торговый объем",
-            
-            // Plan section
             choosePlanTitle: "Выберите свой план",
             choosePlanSubtitle: "Выберите лучший вариант для ваших торговых целей",
             instant: "Мгновенный",
             step1: "1 Шаг",
             step2: "2 Шага",
-            
-            // Plans
             starter: "Начальный",
             advanced: "Продвинутый",
             premium: "Премиум",
@@ -109,22 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
             fromPrice: "от $5K",
             fromPrice10k: "от $10K",
             fromPrice25k: "от $25K",
-            
-            // Plan features
             basicFeatures: "Базовые функции",
-            advancedFeatures: "Расширенные функции",
+            advancedFeatures: "Продвинутые функции",
             premiumFeatures: "Премиум функции",
-            limitedTrading: "Ограниченный объем торгов",
-            increasedTrading: "Увеличенный объем торгов",
-            unlimitedTrading: "Неограниченный объем торгов",
+            limitedTrading: "Ограниченный объем торговли",
+            increasedTrading: "Увеличенный объем торговли",
+            unlimitedTrading: "Неограниченный объем торговли",
             standardSupport: "Стандартная поддержка",
             prioritySupport: "Приоритетная поддержка",
             vipSupport: "VIP поддержка 24/7",
             basicAnalytics: "Базовая аналитика",
-            advancedAnalytics: "Расширенная аналитика",
+            advancedAnalytics: "Продвинутая аналитика",
             proAnalytics: "Профессиональная аналитика",
-            
-            // Features section
+            choosePlan: "Выбрать план",
+            tradingStats: "Торговая статистика",
+            daily: "День",
+            weekly: "Неделя",
+            monthly: "Месяц",
             whyChooseUs: "Почему выбирают нас",
             security: "Безопасность",
             securityDesc: "Современные технологии защиты данных и средств",
@@ -134,44 +47,85 @@ document.addEventListener("DOMContentLoaded", () => {
             supportDesc: "Круглосуточная профессиональная поддержка",
             analytics: "Аналитика",
             analyticsDesc: "Продвинутые инструменты анализа",
-            
-            // Footer
             aboutCompany: "О компании",
             companyDesc: "TradePro - ведущая платформа для профессиональной торговли с передовыми технологиями и инновационными решениями.",
             contacts: "Контакты",
             social: "Социальные сети",
             copyright: "© 2024 TradePro. Все права защищены.",
-            
-            // Buttons
-            choosePlan: "Выбрать план"
+            home: "Главная",
+            terms: "Условия использования",
+            about: "О нас",
+            partner: "Партнерская программа",
+            faq: "FAQ"
+        },
+        en: {
+            mainTitle: "Professional Trading Platform",
+            heroSubtitle: "Innovative solutions for modern trading",
+            activeTraders: "Active Traders",
+            countries: "Countries",
+            tradingVolume: "Trading Volume",
+            choosePlanTitle: "Choose Your Plan",
+            choosePlanSubtitle: "Select the best option for your trading goals",
+            instant: "Instant",
+            step1: "Step 1",
+            step2: "Step 2",
+            starter: "Starter",
+            advanced: "Advanced",
+            premium: "Premium",
+            studentPlan: "Student Plan",
+            practitionerPlan: "Practitioner Plan",
+            masterPlan: "Master Plan",
+            fromPrice: "from $5K",
+            fromPrice10k: "from $10K",
+            fromPrice25k: "from $25K",
+            basicFeatures: "Basic Features",
+            advancedFeatures: "Advanced Features",
+            premiumFeatures: "Premium Features",
+            limitedTrading: "Limited trading volume",
+            increasedTrading: "Increased trading volume",
+            unlimitedTrading: "Unlimited trading volume",
+            standardSupport: "Standard support",
+            prioritySupport: "Priority support",
+            vipSupport: "24/7 VIP support",
+            basicAnalytics: "Basic analytics",
+            advancedAnalytics: "Advanced analytics",
+            proAnalytics: "Professional analytics",
+            choosePlan: "Choose Plan",
+            tradingStats: "Trading Statistics",
+            daily: "Daily",
+            weekly: "Weekly",
+            monthly: "Monthly",
+            whyChooseUs: "Why Choose Us",
+            security: "Security",
+            securityDesc: "Modern technologies for data and funds protection",
+            speed: "Speed",
+            speedDesc: "Instant order execution",
+            support: "Support",
+            supportDesc: "24/7 professional support",
+            analytics: "Analytics",
+            analyticsDesc: "Advanced analysis tools",
+            aboutCompany: "About Company",
+            companyDesc: "TradePro - leading platform for professional trading with advanced technologies and innovative solutions.",
+            contacts: "Contacts",
+            social: "Social Media",
+            copyright: "© 2024 TradePro. All rights reserved.",
+            home: "Home",
+            terms: "Terms of Use",
+            about: "About Us",
+            partner: "Partner Program",
+            faq: "FAQ"
         },
         ua: {
-            // Site title
-            siteTitle: "TradePro - Професійні торгові рішення",
-            loading: "Завантаження...",
-
-            // Navigation
-            home: "Головна",
-            terms: "Умови використання",
-            about: "Про нас",
-            partner: "Партнерська програма",
-            faq: "FAQ",
-            
-            // Hero section
-            heroTitle: "Професійна торгова платформа",
+            mainTitle: "Професійна торгова платформа",
             heroSubtitle: "Інноваційні рішення для сучасного трейдингу",
             activeTraders: "Активних трейдерів",
             countries: "Країн",
             tradingVolume: "Торговий об'єм",
-            
-            // Plan section
             choosePlanTitle: "Оберіть свій план",
             choosePlanSubtitle: "Оберіть найкращий варіант для ваших торгових цілей",
             instant: "Миттєвий",
             step1: "1 Крок",
             step2: "2 Кроки",
-            
-            // Plans
             starter: "Початковий",
             advanced: "Розширений",
             premium: "Преміум",
@@ -181,22 +135,23 @@ document.addEventListener("DOMContentLoaded", () => {
             fromPrice: "від $5K",
             fromPrice10k: "від $10K",
             fromPrice25k: "від $25K",
-            
-            // Plan features
             basicFeatures: "Базові функції",
             advancedFeatures: "Розширені функції",
             premiumFeatures: "Преміум функції",
-            limitedTrading: "Обмежений об'єм торгів",
-            increasedTrading: "Збільшений об'єм торгів",
-            unlimitedTrading: "Необмежений об'єм торгів",
+            limitedTrading: "Обмежений об'єм торгівлі",
+            increasedTrading: "Збільшений об'єм торгівлі",
+            unlimitedTrading: "Необмежений об'єм торгівлі",
             standardSupport: "Стандартна підтримка",
             prioritySupport: "Пріоритетна підтримка",
             vipSupport: "VIP підтримка 24/7",
             basicAnalytics: "Базова аналітика",
             advancedAnalytics: "Розширена аналітика",
             proAnalytics: "Професійна аналітика",
-            
-            // Features section
+            choosePlan: "Обрати план",
+            tradingStats: "Торгова статистика",
+            daily: "День",
+            weekly: "Тиждень",
+            monthly: "Місяць",
             whyChooseUs: "Чому обирають нас",
             security: "Безпека",
             securityDesc: "Сучасні технології захисту даних та коштів",
@@ -205,36 +160,42 @@ document.addEventListener("DOMContentLoaded", () => {
             support: "Підтримка",
             supportDesc: "Цілодобова професійна підтримка",
             analytics: "Аналітика",
-            analyticsDesc: "Просунуті інструменти аналізу",
-            
-            // Footer
+            analyticsDesc: "Передові інструменти аналізу",
             aboutCompany: "Про компанію",
             companyDesc: "TradePro - провідна платформа для професійної торгівлі з передовими технологіями та інноваційними рішеннями.",
             contacts: "Контакти",
             social: "Соціальні мережі",
             copyright: "© 2024 TradePro. Всі права захищені.",
-            
-            // Buttons
-            choosePlan: "Обрати план"
+            home: "Головна",
+            terms: "Умови використання",
+            about: "Про нас",
+            partner: "Партнерська програма",
+            faq: "FAQ"
         }
     };
 
     let currentLang = 'ru';
 
-    // Простая функция обновления текстов
+    // Функция обновления текстов
     function updateTexts() {
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[currentLang] && translations[currentLang][key]) {
-                element.textContent = translations[currentLang][key];
+                // Сохраняем классы и стили при обновлении текста
+                if (element.classList.contains('hero-title')) {
+                    element.innerHTML = `<span class="hero-title">${translations[currentLang][key]}</span>`;
+                } else {
+                    element.textContent = translations[currentLang][key];
+                }
             }
         });
     }
 
     // Обработчики для кнопок языка
-    document.querySelectorAll(".lang-btn").forEach(btn => {
+    const langBtns = document.querySelectorAll(".lang-btn");
+    langBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-            document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+            langBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentLang = btn.dataset.lang;
             updateTexts();
